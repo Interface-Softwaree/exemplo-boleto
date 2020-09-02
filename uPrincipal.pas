@@ -106,6 +106,8 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure btnRegistroClick(Sender: TObject);
+    procedure btnLerRetornoClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -121,6 +123,79 @@ implementation
 {$R *.dfm}
 
 
+
+procedure TForm4.btnLerRetornoClick(Sender: TObject);
+begin
+ACBrBoleto.LerRetorno();
+end;
+
+procedure TForm4.btnRegistroClick(Sender: TObject);
+var
+  SLRemessa: TStringList;
+  i: Integer;
+begin
+  with ACBrBoleto do
+  begin
+    //Função de Envio
+    EnviarBoleto;
+
+    //Verifica Lista com os retornos
+    if ListaRetornoWeb.Count > 0 then
+    begin
+      SLRemessa := TStringList.Create;
+      try
+        for i:= 0 to ListaRetornoWeb.Count -1 do
+        begin
+          //Ler todos os campos da classe Retorno
+           SLRemessa.Add('Cod_Retorno='+ ListaRetornoWeb[i].CodRetorno + sLineBreak +
+                       'Msg_Retorno='+ ListaRetornoWeb[i].MsgRetorno + sLineBreak +
+                       'Ori_Retorno='+ ListaRetornoWeb[i].OriRetorno + sLineBreak +
+                       'HEADER' + sLineBreak +
+                       'Versao='+ ListaRetornoWeb[i].Header.Versao + sLineBreak +
+                       'Autenticacao=' + ListaRetornoWeb[i].Header.Autenticacao + sLineBreak +
+                       'Usuario_Servico=' + ListaRetornoWeb[i].Header.Usuario_Servico + sLineBreak +
+                       'Usuario=' + ListaRetornoWeb[i].Header.Usuario + sLineBreak +
+                       'Operacao='  + TipoOperacaoToStr(ListaRetornoWeb[i].Header.Operacao) + sLineBreak +
+                       'Indice=' + IntToStr(ListaRetornoWeb[i].Header.Indice) + sLineBreak +
+                       'Sistema_Origem=' + ListaRetornoWeb[i].Header.Sistema_Origem + sLineBreak +
+                       'Agencia=' + IntToStr(ListaRetornoWeb[i].Header.Agencia) + sLineBreak +
+                       'ID_Origem=' + ListaRetornoWeb[i].Header.Id_Origem + sLineBreak +
+                       'Data_Hora=' +FormatDateTime('dd/mm/yyyy hh:nn:ss',ListaRetornoWeb[i].Header.Data_Hora) + sLineBreak +
+                       'ID_Processo=' + ListaRetornoWeb[i].Header.Id_Processo + sLineBreak +
+                       'DADOS' + sLineBreak +
+                       'Excessao=' +ListaRetornoWeb[i].DadosRet.Excecao + sLineBreak +
+                       'CONTROLE_NEGOCIAL' + sLineBreak +
+                       'Origem_Retorno=' + ListaRetornoWeb[i].DadosRet.ControleNegocial.OriRetorno + sLineBreak +
+                       'NSU=' + ListaRetornoWeb[i].DadosRet.ControleNegocial.NSU + sLineBreak +
+                       'Cod_Retorno=' + ListaRetornoWeb[i].DadosRet.ControleNegocial.CodRetorno + sLineBreak +
+                       'Msg_Retorno=' + ListaRetornoWeb[i].DadosRet.ControleNegocial.Retorno + sLineBreak +
+                       'COMPROVANTE' + sLineBreak +
+                       'Data=' +  FormatDateTime('dd/mm/yyyy', ListaRetornoWeb[i].DadosRet.Comprovante.Data) + sLineBreak +
+                       'Hora=' +  ListaRetornoWeb[i].DadosRet.Comprovante.Hora + sLineBreak +
+                       'ID_BOLETO' + sLineBreak +
+                       'Codigo_Barras=' + ListaRetornoWeb[i].DadosRet.IDBoleto.CodBarras + sLineBreak +
+                       'Linha_Digitavel=' + ListaRetornoWeb[i].DadosRet.IDBoleto.LinhaDig + sLineBreak +
+                       'Nosso_Numero=' + ListaRetornoWeb[i].DadosRet.IDBoleto.NossoNum + sLineBreak +
+                       'URL=' + ListaRetornoWeb[i].DadosRet.IDBoleto.URL + sLineBreak +
+                       'CONSULTA_BOLETO' + sLineBreak +
+                       'Numero_Documento=' + ListaRetornoWeb[i].DadosRet.TituloRet.NumeroDocumento + sLineBreak +
+                       'Data_Vencimento=' + FormatDateTime('dd/mm/yyyy',ListaRetornoWeb[i].DadosRet.TituloRet.Vencimento) + sLineBreak +
+                       'Valor=' + CurrToStr(ListaRetornoWeb[i].DadosRet.TituloRet.ValorDocumento) + sLineBreak
+                        );
+        end;
+
+        SLRemessa.SaveToFile( PathWithDelim(ExtractFilePath(Application.ExeName))+'RetornoRegistro.txt' );
+      finally
+        SLRemessa.Free;
+      end;
+      ShowMessage('Retorno Envio gerado em: '+ PathWithDelim(ExtractFilePath(Application.ExeName))+'RetornoRegistro.txt' );
+
+    end;
+
+  end;
+
+
+end;
 
 procedure TForm4.Button2Click(Sender: TObject);
 begin

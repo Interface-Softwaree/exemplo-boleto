@@ -592,6 +592,7 @@ object Form4: TForm4
       Height = 25
       Caption = 'Ler Retorno'
       TabOrder = 12
+      OnClick = btnLerRetornoClick
     end
   end
   object Panel1: TPanel
@@ -679,6 +680,7 @@ object Form4: TForm4
     Height = 25
     Caption = 'Registrar Boleto On Line'
     TabOrder = 6
+    OnClick = btnRegistroClick
   end
   object ACBrBoleto: TACBrBoleto
     Banco.Numero = 341
@@ -713,7 +715,7 @@ object Form4: TForm4
     DirLogo = '..\..\..\Fontes\ACBrBoleto\Logos\Colorido'
     FastReportFile = 
       'C:\Users\PROGRAMA'#199#195'O 3\Documents\GitHub\exemplo-boleto\Report\Bo' +
-      'letoNovo3.fr3'
+      'letoNovo4.fr3'
     ModoThread = False
     IncorporarBackgroundPdf = False
     IncorporarFontesPdf = False
@@ -730,7 +732,7 @@ object Form4: TForm4
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 40401.475989294000000000
-    ReportOptions.LastChange = 44076.588433113430000000
+    ReportOptions.LastChange = 44076.653418923610000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -783,7 +785,7 @@ object Form4: TForm4
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = []
-        Height = 1028.032160000000000000
+        Height = 1026.267475490000000000
         ParentFont = False
         Top = 18.897650000000000000
         Width = 718.110700000000000000
@@ -819,8 +821,8 @@ object Form4: TForm4
         end
         object Memo3: TfrxMemoView
           Align = baRight
-          Left = 483.779839999999900000
-          Top = 1.242424240000002000
+          Left = 483.779840000000000000
+          Top = 1.242424239999998000
           Width = 234.330860000000000000
           Height = 18.897650000000000000
           AutoWidth = True
@@ -1433,25 +1435,9 @@ object Form4: TForm4
             ' Data do processamento')
           ParentFont = False
         end
-        object Memo34: TfrxMemoView
-          Top = 170.496289390000000000
-          Width = 601.169410640000000000
-          Height = 18.897650000000000000
-          DataSetName = 'Titulo'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -9
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftRight, ftBottom]
-          Memo.UTF8W = (
-            '[Titulo."LocalPagamento"]')
-          ParentFont = False
-          WordWrap = False
-        end
         object TituloDataProcessamento: TfrxMemoView
           Left = 601.757575760000000000
-          Top = 170.496289390000000000
+          Top = 182.496289390000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
           DataField = 'DataProcessamento'
@@ -1471,8 +1457,8 @@ object Form4: TForm4
         end
         object Line1: TfrxLineView
           Align = baWidth
-          Top = 200.548546670000000000
-          Width = 718.110700000000000000
+          Top = 206.548546670000000000
+          Width = 483.779840000000000000
           Color = clBlack
           Frame.Style = fsDot
           Frame.Typ = [ftTop]
@@ -1497,9 +1483,9 @@ object Form4: TForm4
         end
         object Logo_2: TfrxPictureView
           Align = baLeft
-          Top = 210.750154550000000000
+          Top = 214.529684550000000000
           Width = 180.060606060000000000
-          Height = 37.000000000000000000
+          Height = 33.220470000000000000
           Frame.Typ = [ftRight, ftBottom]
           HightQuality = False
           Transparent = False
@@ -1507,7 +1493,7 @@ object Form4: TForm4
         end
         object Memo36: TfrxMemoView
           Align = baRight
-          Left = 483.779839999999900000
+          Left = 483.779840000000000000
           Top = 203.088744550000000000
           Width = 234.330860000000000000
           Height = 18.897650000000000000
@@ -1550,24 +1536,6 @@ object Form4: TForm4
             ' Vencimento')
           ParentFont = False
         end
-        object Memo40: TfrxMemoView
-          Top = 259.132653030000000000
-          Width = 535.937007870000000000
-          Height = 18.897650000000000000
-          DataSetName = 'Titulo'
-          DisplayFormat.FormatStr = 'dd/mm/yyyy'
-          DisplayFormat.Kind = fkDateTime
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -9
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftRight, ftBottom]
-          Memo.UTF8W = (
-            '[Titulo."LocalPagamento"]')
-          ParentFont = False
-          WordWrap = False
-        end
         object Memo41: TfrxMemoView
           Left = 535.606060610000000000
           Top = 259.132653030000000000
@@ -1587,7 +1555,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo42: TfrxMemoView
-          Top = 278.072046970000000000
+          Top = 292.072046970000000000
           Width = 535.829157720000000000
           Height = 30.236240000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1602,7 +1570,7 @@ object Form4: TForm4
         end
         object Memo43: TfrxMemoView
           Left = 4.000000000000000000
-          Top = 289.435683330000000000
+          Top = 303.435683330000000000
           Width = 403.653457870000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1620,7 +1588,7 @@ object Form4: TForm4
         end
         object Memo44: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 278.072046970000000000
+          Top = 292.072046970000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1635,7 +1603,7 @@ object Form4: TForm4
         end
         object CedenteAgencia2: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 289.435683330000000000
+          Top = 303.435683330000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1657,7 +1625,7 @@ object Form4: TForm4
         end
         object Memo46: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 308.375077280000000000
+          Top = 322.375077280000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1672,7 +1640,7 @@ object Form4: TForm4
         end
         object Memo47: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 318.981137880000000000
+          Top = 332.981137880000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1690,7 +1658,7 @@ object Form4: TForm4
         end
         object Memo48: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1705,7 +1673,7 @@ object Form4: TForm4
         end
         object Memo49: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 349.284168180000000000
+          Top = 363.284168180000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1724,7 +1692,7 @@ object Form4: TForm4
         end
         object Memo50: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 368.223562120000000000
+          Top = 382.223562120000000000
           Width = 183.614871950000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1739,7 +1707,7 @@ object Form4: TForm4
         end
         object Memo51: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 379.587198480000000000
+          Top = 393.587198480000000000
           Width = 183.041125760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1757,7 +1725,7 @@ object Form4: TForm4
         end
         object Memo52: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 398.526592420000000000
+          Top = 412.526592420000000000
           Width = 195.711037710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1772,7 +1740,7 @@ object Form4: TForm4
         end
         object Memo53: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 409.890228780000000000
+          Top = 423.890228780000000000
           Width = 183.041125760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1790,7 +1758,7 @@ object Form4: TForm4
         end
         object Memo54: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 428.829622730000000000
+          Top = 442.829622730000000000
           Width = 195.711037710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1805,7 +1773,7 @@ object Form4: TForm4
         end
         object Memo55: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 440.193259090000000000
+          Top = 454.193259090000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1823,14 +1791,14 @@ object Form4: TForm4
         end
         object Line2: TfrxLineView
           Align = baWidth
-          Top = 459.132653030000000000
+          Top = 473.132653030000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
         object Memo56: TfrxMemoView
           Left = 275.000000000000000000
-          Top = 602.875683550000000000
+          Top = 616.875683550000000000
           Width = 442.895795450000000000
           Height = 37.039370080000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1846,7 +1814,7 @@ object Form4: TForm4
         end
         object Line3: TfrxLineView
           Align = baWidth
-          Top = 593.284168180000000000
+          Top = 607.284168180000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Style = fsDot
@@ -1854,7 +1822,7 @@ object Form4: TForm4
         end
         object Memo57: TfrxMemoView
           Left = 180.417440000000000000
-          Top = 602.875683540000000000
+          Top = 616.875683540000000000
           Width = 94.488250000000000000
           Height = 37.039370080000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1872,7 +1840,7 @@ object Form4: TForm4
         end
         object Logo_3: TfrxPictureView
           Align = baLeft
-          Top = 602.728200300000000000
+          Top = 616.728200300000000000
           Width = 180.060606060000000000
           Height = 37.000000000000000000
           Frame.Typ = [ftRight, ftBottom]
@@ -1881,7 +1849,7 @@ object Form4: TForm4
           TransparentColor = clWhite
         end
         object Memo59: TfrxMemoView
-          Top = 639.747062420000000000
+          Top = 653.747062420000000000
           Width = 535.829157720000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1896,7 +1864,7 @@ object Form4: TForm4
         end
         object Memo60: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 639.747062420000000000
+          Top = 653.747062420000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1908,27 +1876,9 @@ object Form4: TForm4
             ' Vencimento')
           ParentFont = False
         end
-        object Memo61: TfrxMemoView
-          Top = 651.110698780000000000
-          Width = 535.937007870000000000
-          Height = 18.897650000000000000
-          DataSetName = 'Titulo'
-          DisplayFormat.FormatStr = 'dd/mm/yyyy'
-          DisplayFormat.Kind = fkDateTime
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -9
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftRight, ftBottom]
-          Memo.UTF8W = (
-            '[Titulo."LocalPagamento"]')
-          ParentFont = False
-          WordWrap = False
-        end
         object Memo62: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 651.110698780000000000
+          Top = 665.110698780000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1945,7 +1895,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo63: TfrxMemoView
-          Top = 670.050092720000000000
+          Top = 699.050092720000000000
           Width = 535.829157720000000000
           Height = 30.236240000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1959,7 +1909,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo64: TfrxMemoView
-          Top = 681.413729080000000000
+          Top = 710.413729080000000000
           Width = 407.432987870000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -1977,7 +1927,7 @@ object Form4: TForm4
         end
         object Memo65: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 670.050092720000000000
+          Top = 699.050092720000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1992,7 +1942,7 @@ object Form4: TForm4
         end
         object CedenteAgencia3: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 681.413729080000000000
+          Top = 710.413729080000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2013,7 +1963,7 @@ object Form4: TForm4
             end>
         end
         object Memo58: TfrxMemoView
-          Top = 308.375077270000000000
+          Top = 322.375077270000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2027,7 +1977,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo77: TfrxMemoView
-          Top = 319.496289390000000000
+          Top = 333.496289390000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2047,7 +1997,7 @@ object Form4: TForm4
         end
         object Memo78: TfrxMemoView
           Left = 132.909090910000000000
-          Top = 308.375077270000000000
+          Top = 322.375077270000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2062,8 +2012,8 @@ object Form4: TForm4
         end
         object Memo79: TfrxMemoView
           Left = 132.909090910000000000
-          Top = 319.496289390000000000
-          Width = 132.283464566929000000
+          Top = 333.496289390000000000
+          Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
           DisplayFormat.FormatStr = 'dd/mm/yyyy'
@@ -2081,8 +2031,8 @@ object Form4: TForm4
         end
         object Memo80: TfrxMemoView
           Left = 265.121212120000000000
-          Top = 308.375077270000000000
-          Width = 66.141732283464600000
+          Top = 322.375077270000000000
+          Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -2096,7 +2046,7 @@ object Form4: TForm4
         end
         object Memo81: TfrxMemoView
           Left = 265.121212120000000000
-          Top = 319.454784060000000000
+          Top = 333.454784060000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2114,7 +2064,7 @@ object Form4: TForm4
         end
         object Memo82: TfrxMemoView
           Left = 331.030303030000000000
-          Top = 308.375077270000000000
+          Top = 322.375077270000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2129,7 +2079,7 @@ object Form4: TForm4
         end
         object Memo83: TfrxMemoView
           Left = 331.030303030000000000
-          Top = 319.454784060000000000
+          Top = 333.454784060000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2147,7 +2097,7 @@ object Form4: TForm4
         end
         object Memo84: TfrxMemoView
           Left = 396.969696960000000000
-          Top = 308.375077270000000000
+          Top = 322.375077270000000000
           Width = 138.859460760000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2162,7 +2112,7 @@ object Form4: TForm4
         end
         object Memo85: TfrxMemoView
           Left = 396.969696960000000000
-          Top = 319.496289390000000000
+          Top = 333.496289390000000000
           Width = 138.858983540000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2181,7 +2131,7 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo86: TfrxMemoView
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2195,7 +2145,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo87: TfrxMemoView
-          Top = 349.799319700000000000
+          Top = 363.799319700000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2213,7 +2163,7 @@ object Form4: TForm4
         end
         object Memo88: TfrxMemoView
           Left = 132.575757580000000000
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2228,7 +2178,7 @@ object Form4: TForm4
         end
         object Memo89: TfrxMemoView
           Left = 132.575757580000000000
-          Top = 349.757814370000000000
+          Top = 363.757814370000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2246,7 +2196,7 @@ object Form4: TForm4
         end
         object Memo90: TfrxMemoView
           Left = 198.636363640000000000
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2261,7 +2211,7 @@ object Form4: TForm4
         end
         object Memo91: TfrxMemoView
           Left = 198.636363640000000000
-          Top = 349.757814370000000000
+          Top = 363.757814370000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2279,7 +2229,7 @@ object Form4: TForm4
         end
         object Memo92: TfrxMemoView
           Left = 265.151515150000000000
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2294,7 +2244,7 @@ object Form4: TForm4
         end
         object Memo93: TfrxMemoView
           Left = 265.151515150000000000
-          Top = 349.799319700000000000
+          Top = 363.799319700000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2312,7 +2262,7 @@ object Form4: TForm4
         end
         object Memo94: TfrxMemoView
           Left = 396.969696970000000000
-          Top = 338.678107580000000000
+          Top = 352.678107580000000000
           Width = 138.859460760000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2327,7 +2277,7 @@ object Form4: TForm4
         end
         object Memo95: TfrxMemoView
           Left = 396.969696970000000000
-          Top = 349.799319700000000000
+          Top = 363.799319700000000000
           Width = 138.858983540000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2344,7 +2294,7 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo96: TfrxMemoView
-          Top = 368.981137880000000000
+          Top = 382.981137880000000000
           Width = 534.556191840000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2359,8 +2309,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object TituloInstrucao1: TfrxMemoView
-          Top = 380.344774250000000000
-          Width = 533.963513330000000000
+          Top = 394.344774250000000000
+          Width = 533.963513329999900000
           Height = 78.746134840000000000
           DataSetName = 'Titulo'
           Font.Charset = DEFAULT_CHARSET
@@ -2373,8 +2323,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo97: TfrxMemoView
-          Top = 459.890228790000000000
-          Width = 94.488250000000000000
+          Top = 473.890228790000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -2386,8 +2336,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object TituloSacado_NomeSacado1: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 459.890228790000000000
+          Left = 47.879715450000000000
+          Top = 473.890228790000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_NomeSacado'
@@ -2403,7 +2353,7 @@ object Form4: TForm4
         end
         object Memo98: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 459.890228790000000000
+          Top = 473.890228790000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2417,7 +2367,7 @@ object Form4: TForm4
         end
         object TituloSacado_CNPJCPF: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 478.829622720000000000
+          Top = 492.829622720000000000
           Width = 166.416203030000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_CNPJCPF'
@@ -2433,8 +2383,8 @@ object Form4: TForm4
           WordWrap = False
         end
         object TituloSacado_Logradouro: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 478.829622720000000000
+          Left = 48.000000000000000000
+          Top = 492.829622720000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2449,8 +2399,8 @@ object Form4: TForm4
           WordWrap = False
         end
         object TituloSacado_Bairro: TfrxMemoView
-          Left = 95.454545460000000000
-          Top = 497.769016670000100000
+          Left = 48.000000000000000000
+          Top = 511.769016670000100000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_Bairro'
@@ -2465,8 +2415,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object TituloSacado_Cidade: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 516.708410600000000000
+          Left = 48.000000000000000000
+          Top = 530.708410600000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2484,14 +2434,14 @@ object Form4: TForm4
         end
         object Line6: TfrxLineView
           Align = baWidth
-          Top = 547.496289390000000000
+          Top = 561.496289390000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
         object Memo99: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 516.708410600000000000
+          Top = 530.708410600000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2504,7 +2454,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo100: TfrxMemoView
-          Top = 535.617501510000000000
+          Top = 549.617501510000000000
           Width = 495.118344570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2517,7 +2467,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo101: TfrxMemoView
-          Top = 548.526592420000100000
+          Top = 562.526592420000100000
           Width = 146.677403960000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2531,7 +2481,7 @@ object Form4: TForm4
         end
         object Memo102: TfrxMemoView
           Left = 222.727272730000000000
-          Top = 548.526592420000100000
+          Top = 562.526592420000100000
           Width = 272.434979720000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2545,7 +2495,7 @@ object Form4: TForm4
         end
         object Memo103: TfrxMemoView
           Left = 495.454545450000000000
-          Top = 548.526592420000100000
+          Top = 562.526592420000100000
           Width = 204.403439720000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2558,7 +2508,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo104: TfrxMemoView
-          Top = 560.647804540000100000
+          Top = 574.647804540000100000
           Width = 495.162252440000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2571,7 +2521,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo105: TfrxMemoView
-          Top = 572.769016660000100000
+          Top = 586.769016660000000000
           Width = 495.162252440000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2585,7 +2535,7 @@ object Form4: TForm4
         end
         object Memo67: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 700.041743940000000000
+          Top = 729.041743940000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2600,7 +2550,7 @@ object Form4: TForm4
         end
         object Memo68: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 710.647804540000000000
+          Top = 739.647804540000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2618,7 +2568,7 @@ object Form4: TForm4
         end
         object Memo69: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 184.372447710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2633,7 +2583,7 @@ object Form4: TForm4
         end
         object Memo70: TfrxMemoView
           Left = 535.606060610000000000
-          Top = 740.950834840000000000
+          Top = 769.950834840000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2652,7 +2602,7 @@ object Form4: TForm4
         end
         object Memo71: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 759.890228780000000000
+          Top = 788.890228780000000000
           Width = 183.614871950000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2667,7 +2617,7 @@ object Form4: TForm4
         end
         object Memo72: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 771.253865140000000000
+          Top = 800.253865140000000000
           Width = 183.041125760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2685,7 +2635,7 @@ object Form4: TForm4
         end
         object Memo73: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 790.193259080000000000
+          Top = 819.193259080000000000
           Width = 195.711037710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2700,7 +2650,7 @@ object Form4: TForm4
         end
         object Memo74: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 801.556895440000000000
+          Top = 830.556895440000000000
           Width = 183.041125760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2718,7 +2668,7 @@ object Form4: TForm4
         end
         object Memo75: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 820.496289390000000000
+          Top = 849.496289390000000000
           Width = 195.711037710000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2733,7 +2683,7 @@ object Form4: TForm4
         end
         object Memo76: TfrxMemoView
           Left = 536.363636370000000000
-          Top = 831.859925750000000000
+          Top = 860.859925750000000000
           Width = 167.923005760000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2751,13 +2701,13 @@ object Form4: TForm4
         end
         object Line4: TfrxLineView
           Align = baWidth
-          Top = 850.799319690000000000
+          Top = 879.799319690000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
         object Memo106: TfrxMemoView
-          Top = 700.041743930000000000
+          Top = 729.041743930000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2771,7 +2721,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo107: TfrxMemoView
-          Top = 711.162956050000000000
+          Top = 740.162956050000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2791,7 +2741,7 @@ object Form4: TForm4
         end
         object Memo108: TfrxMemoView
           Left = 132.909090910000000000
-          Top = 700.041743930000000000
+          Top = 729.041743930000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2806,7 +2756,7 @@ object Form4: TForm4
         end
         object Memo109: TfrxMemoView
           Left = 132.909090910000000000
-          Top = 711.162956050000000000
+          Top = 740.162956050000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2825,7 +2775,7 @@ object Form4: TForm4
         end
         object Memo110: TfrxMemoView
           Left = 265.121212120000000000
-          Top = 700.041743930000000000
+          Top = 729.041743930000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2840,7 +2790,7 @@ object Form4: TForm4
         end
         object Memo111: TfrxMemoView
           Left = 265.121212120000000000
-          Top = 711.121450720000000000
+          Top = 740.121450720000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2858,7 +2808,7 @@ object Form4: TForm4
         end
         object Memo112: TfrxMemoView
           Left = 331.030303030000000000
-          Top = 700.041743930000000000
+          Top = 729.041743930000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2873,7 +2823,7 @@ object Form4: TForm4
         end
         object Memo113: TfrxMemoView
           Left = 331.030303030000000000
-          Top = 711.121450720000000000
+          Top = 740.121450720000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2891,7 +2841,7 @@ object Form4: TForm4
         end
         object Memo114: TfrxMemoView
           Left = 396.969696960000000000
-          Top = 700.041743930000000000
+          Top = 729.041743930000000000
           Width = 138.859460760000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2906,7 +2856,7 @@ object Form4: TForm4
         end
         object Memo115: TfrxMemoView
           Left = 396.969696960000000000
-          Top = 711.162956050000000000
+          Top = 740.162956050000000000
           Width = 138.858983540000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2925,7 +2875,7 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo116: TfrxMemoView
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2939,7 +2889,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo117: TfrxMemoView
-          Top = 741.465986360000000000
+          Top = 770.465986360000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2957,7 +2907,7 @@ object Form4: TForm4
         end
         object Memo118: TfrxMemoView
           Left = 132.575757580000000000
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2972,7 +2922,7 @@ object Form4: TForm4
         end
         object Memo119: TfrxMemoView
           Left = 132.575757580000000000
-          Top = 741.424481030000000000
+          Top = 770.424481030000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -2990,7 +2940,7 @@ object Form4: TForm4
         end
         object Memo120: TfrxMemoView
           Left = 198.636363640000000000
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 66.141732280000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3005,7 +2955,7 @@ object Form4: TForm4
         end
         object Memo121: TfrxMemoView
           Left = 197.878787880000000000
-          Top = 741.424481030000000000
+          Top = 770.424481030000000000
           Width = 66.141732280000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -3023,7 +2973,7 @@ object Form4: TForm4
         end
         object Memo122: TfrxMemoView
           Left = 265.151515150000000000
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3038,7 +2988,7 @@ object Form4: TForm4
         end
         object Memo123: TfrxMemoView
           Left = 265.151515150000000000
-          Top = 741.465986360000000000
+          Top = 770.465986360000000000
           Width = 132.283464570000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -3056,7 +3006,7 @@ object Form4: TForm4
         end
         object Memo124: TfrxMemoView
           Left = 396.969696970000000000
-          Top = 730.344774240000000000
+          Top = 759.344774240000000000
           Width = 138.859460760000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3071,7 +3021,7 @@ object Form4: TForm4
         end
         object Memo125: TfrxMemoView
           Left = 396.969696970000000000
-          Top = 741.465986360000000000
+          Top = 770.465986360000000000
           Width = 138.858983540000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -3088,7 +3038,7 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo126: TfrxMemoView
-          Top = 760.647804540000000000
+          Top = 789.647804540000000000
           Width = 534.556191840000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3103,8 +3053,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo127: TfrxMemoView
-          Top = 772.011440910000000000
-          Width = 534.721089090000000000
+          Top = 801.011440910000000000
+          Width = 534.721089089999900000
           Height = 77.988559090000000000
           DataSetName = 'Titulo'
           Font.Charset = DEFAULT_CHARSET
@@ -3117,8 +3067,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo128: TfrxMemoView
-          Top = 851.556895450000000000
-          Width = 94.488250000000000000
+          Top = 880.556895450000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -3130,8 +3080,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo129: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 851.556895450000000000
+          Left = 48.000000000000000000
+          Top = 880.556895450000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_NomeSacado'
@@ -3147,7 +3097,7 @@ object Form4: TForm4
         end
         object Memo130: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 851.556895450000000000
+          Top = 880.556895450000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3161,7 +3111,7 @@ object Form4: TForm4
         end
         object Memo131: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 870.496289380000000000
+          Top = 899.496289380000000000
           Width = 166.416203030000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_CNPJCPF'
@@ -3177,8 +3127,8 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo132: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 870.496289380000000000
+          Left = 48.000000000000000000
+          Top = 899.496289380000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -3193,8 +3143,8 @@ object Form4: TForm4
           WordWrap = False
         end
         object Memo134: TfrxMemoView
-          Left = 95.454545460000000000
-          Top = 889.435683330000000000
+          Left = 48.000000000000000000
+          Top = 918.435683330000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataField = 'Sacado_Bairro'
@@ -3209,8 +3159,8 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo135: TfrxMemoView
-          Left = 95.454545450000000000
-          Top = 908.375077260000000000
+          Left = 48.000000000000000000
+          Top = 937.375077260000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
           DataSetName = 'Titulo'
@@ -3228,7 +3178,7 @@ object Form4: TForm4
         end
         object Memo136: TfrxMemoView
           Left = 537.121212120000000000
-          Top = 908.375077260000000000
+          Top = 937.375077260000000000
           Width = 132.283464570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3241,7 +3191,7 @@ object Form4: TForm4
           ParentFont = False
         end
         object Memo137: TfrxMemoView
-          Top = 927.284168170000000000
+          Top = 956.284168170000000000
           Width = 495.118344570000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3255,14 +3205,14 @@ object Form4: TForm4
         end
         object Line5: TfrxLineView
           Align = baWidth
-          Top = 939.435683330000000000
+          Top = 968.435683330000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
         object Memo138: TfrxMemoView
           Left = 495.454545450000000000
-          Top = 940.193259090000000000
+          Top = 969.193259090000000000
           Width = 204.403439720000000000
           Height = 11.338590000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3275,10 +3225,10 @@ object Form4: TForm4
           ParentFont = False
         end
         object BarCode1: TfrxBarCodeView
-          Left = 5.303030310000000000
-          Top = 941.708410610000000000
+          Left = 5.303030309999999000
+          Top = 970.708410610000000000
           Width = 441.000000000000000000
-          Height = 40.440944880000000000
+          Height = 40.440944880000010000
           BarType = bcCode_2_5_interleaved
           Expression = '<Titulo."CodBarras">'
           Rotation = 0
@@ -3294,7 +3244,7 @@ object Form4: TForm4
         end
         object Memo45: TfrxMemoView
           Left = 405.630180000000000000
-          Top = 277.685220000000000000
+          Top = 291.685220000000000000
           Width = 130.031850000000000000
           Height = 30.000000000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3308,7 +3258,7 @@ object Form4: TForm4
         end
         object Memo66: TfrxMemoView
           Left = 408.630180000000000000
-          Top = 288.785220000000000000
+          Top = 302.785220000000000000
           Width = 110.000000000000000000
           Height = 14.897650000000000000
           DataSetName = 'Cedente'
@@ -3323,7 +3273,7 @@ object Form4: TForm4
         end
         object Memo133: TfrxMemoView
           Left = 406.189240000000000000
-          Top = 669.976810000000000000
+          Top = 698.976810000000000000
           Width = 130.031850000000000000
           Height = 30.000000000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3337,7 +3287,7 @@ object Form4: TForm4
         end
         object Memo139: TfrxMemoView
           Left = 410.189240000000000000
-          Top = 681.076810000000000000
+          Top = 710.076810000000000000
           Width = 110.000000000000000000
           Height = 14.897650000000000000
           DataSetName = 'Cedente'
@@ -3381,6 +3331,75 @@ object Form4: TForm4
             '  [Titulo."LinhaDigitavel"]')
           ParentFont = False
           VAlign = vaBottom
+        end
+        object Memo34: TfrxMemoView
+          Left = 3.779530000000000000
+          Top = 168.858380000000000000
+          Width = 597.389880640000000000
+          Height = 34.015770000000010000
+          DataSetName = 'Titulo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight, ftBottom]
+          Memo.UTF8W = (
+            
+              'AT'#201' O VENCIMENTO, PAGUE EM QUALQUER BANCO OU CORRESPONDENTE N'#195'O ' +
+              'BANC'#193'RIO. '
+            
+              'AP'#211'S O VENCIMENTO, ACESSE ITAU.COM.BR/BOLETOS E PAGUE EM QUALQUE' +
+              'R BANCO OU'
+            'CORRESPONDENTE N'#195'O BANC'#193'RIO.')
+          ParentFont = False
+          WordWrap = False
+        end
+        object Memo40: TfrxMemoView
+          Left = 2.779530000000000000
+          Top = 257.008040000000000000
+          Width = 533.137870639999900000
+          Height = 34.015770000000010000
+          DataSetName = 'Titulo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight, ftBottom]
+          Memo.UTF8W = (
+            
+              'AT'#201' O VENCIMENTO, PAGUE EM QUALQUER BANCO OU CORRESPONDENTE N'#195'O ' +
+              'BANC'#193'RIO. '
+            
+              'AP'#211'S O VENCIMENTO, ACESSE ITAU.COM.BR/BOLETOS E PAGUE EM QUALQUE' +
+              'R BANCO OU'
+            'CORRESPONDENTE N'#195'O BANC'#193'RIO.')
+          ParentFont = False
+          WordWrap = False
+        end
+        object Memo61: TfrxMemoView
+          Left = 1.779530000000000000
+          Top = 665.197280000000000000
+          Width = 533.137870639999900000
+          Height = 34.015770000000010000
+          DataSetName = 'Titulo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight, ftBottom]
+          Memo.UTF8W = (
+            
+              'AT'#201' O VENCIMENTO, PAGUE EM QUALQUER BANCO OU CORRESPONDENTE N'#195'O ' +
+              'BANC'#193'RIO. '
+            
+              'AP'#211'S O VENCIMENTO, ACESSE ITAU.COM.BR/BOLETOS E PAGUE EM QUALQUE' +
+              'R BANCO OU'
+            'CORRESPONDENTE N'#195'O BANC'#193'RIO.')
+          ParentFont = False
+          WordWrap = False
         end
       end
     end
