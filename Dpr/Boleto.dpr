@@ -2,7 +2,7 @@ program Boleto;
 
 uses
   Vcl.Forms,
-  uPrincipal in 'uPrincipal.pas' {Form4};
+  uPrincipal in '..\Pas\uPrincipal.pas' {Form4};
 
 {$R *.res}
 
