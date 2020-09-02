@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, ACBrUtil,
   ACBrBase, ACBrBoletoConversao, ACBrBoleto, frxClass,system.TypInfo,
-  ACBrBoletoFCFR;
+  ACBrBoletoFCFR, ACBrBarCode;
 
 
 
@@ -96,6 +96,8 @@ type
     btnRegistro: TButton;
     ACBrBoleto: TACBrBoleto;
     ACBrBoletoReport: TACBrBoletoFCFR;
+    Label32: TLabel;
+    ACBrBarCode1: TACBrBarCode;
     frxReport1: TfrxReport;
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -172,7 +174,14 @@ begin
     Sacado.UF         := edtUF.Text;
     Sacado.CEP        := OnlyNumber(edtCEP.Text);
     ValorAbatimento   := StrToCurrDef(edtValorAbatimento.Text,0);
-    LocalPagamento    := edtLocalPag.Text;
+   // LocalPagamento    := edtLocalPag.Text;
+
+      LocalPagamento    := 'ATÉ O VENCIMENTO, PAGUE EM QUALQUER BANCO OU CORRESPONDENTE NÃO BANCÁRIO. '+
+                          'APÓS O VENCIMENTO, ACESSE ITAU.COM.BR/BOLETOS E PAGUE EM QUALQUER BANCO OU CORRESPONDENTE NÃO'+
+                          'BANCÁRIO.';
+
+      ShowMessage(LocalPagamento);
+
     ValorMoraJuros    := StrToCurrDef(edtMoraJuros.Text,0);
     ValorDesconto     := StrToCurrDef(edtValorDesconto.Text,0);
     ValorAbatimento   := StrToCurrDef(edtValorAbatimento.Text,0);
@@ -196,25 +205,25 @@ begin
    // ACBrBoleto.AdicionarMensagensPadroes(Titulo,Mensagem);
 
     if cbxLayOut.ItemIndex = 6 then
-    begin
-      for i:=0 to 3 do
-      begin
-        VLinha := '.';
+        begin
+        for i:=0 to 3 do
+          begin
+            VLinha := '.';
 
-        VQtdeCarcA := length('Descrição Produto/Serviço ' + IntToStr(I));
-        VQtdeCarcB := Length('Valor:');
-        VQtdeCarcC := 85 - (VQtdeCarcA + VQtdeCarcB);
+            VQtdeCarcA := length('Descrição Produto/Serviço ' + IntToStr(I));
+            VQtdeCarcB := Length('Valor:');
+            VQtdeCarcC := 85 - (VQtdeCarcA + VQtdeCarcB);
 
-        VLinha := PadLeft(VLinha,VQtdeCarcC,'.');
+            VLinha := PadLeft(VLinha,VQtdeCarcC,'.');
 
-        Detalhamento.Add('Descrição Produto/Serviço ' + IntToStr(I) + ' '+ VLinha + ' Valor:   '+  PadRight(FormatCurr('R$ ###,##0.00', StrToCurr(edtValorDoc.Text) * 0.25),18,' ') );
-      end;
-      Detalhamento.Add('');
-      Detalhamento.Add('');
-      Detalhamento.Add('');
-      Detalhamento.Add('');
-      Detalhamento.Add('Desconto ........................................................................... Valor: R$ 0,00' );
-    end;
+            Detalhamento.Add('Descrição Produto/Serviço ' + IntToStr(I) + ' '+ VLinha + ' Valor:   '+  PadRight(FormatCurr('R$ ###,##0.00', StrToCurr(edtValorDoc.Text) * 0.25),18,' ') );
+          end;
+        Detalhamento.Add('');
+        Detalhamento.Add('');
+        Detalhamento.Add('');
+        Detalhamento.Add('');
+        Detalhamento.Add('Desconto ........................................................................... Valor: R$ 0,00' );
+        end;
 
     logo:= ExtractFileDir(ParamStr(0)) + '\acbr_logo.jpg';
 
@@ -253,7 +262,12 @@ begin
 
     with Titulo do
     begin
-      LocalPagamento    := 'Pagar preferêncialmente nas agências do Bradesco'; //MEnsagem exigida pelo bradesco
+    //  LocalPagamento    := 'ATÉ O VENCIMENTO, PAGUE EM QUALQUER BANCO OU CORRESPONDENTE NÃO BANCÁRIO. '+
+    //                       'APÓS O VENCIMENTO, ACESSE ITAU.COM.BR/BOLETOS E PAGUE EM QUALQUER BANCO OU CORRESPONDENTE NÃO'+
+    //                       'BANCÁRIO.';
+
+
+
       Vencimento        := IncMonth(EncodeDate(2010,05,10),I);
       DataDocumento     := EncodeDate(2010,04,10);
       NumeroDocumento   := PadRight(IntToStr(I),8,'0');
