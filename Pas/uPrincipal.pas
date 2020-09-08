@@ -126,6 +126,7 @@ implementation
 
 procedure TForm4.btnLerRetornoClick(Sender: TObject);
 begin
+
 ACBrBoleto.LerRetorno();
 end;
 
